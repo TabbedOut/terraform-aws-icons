@@ -1,0 +1,20 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_db_instance.default" [label = "aws_db_instance.default", shape = "box"]
+		"[root] aws_db_subnet_group.default" [label = "aws_db_subnet_group.default", shape = "box"]
+		"[root] aws_security_group.default" [label = "aws_security_group.default", shape = "box"]
+		"[root] aws_subnet.subnet_1" [label = "aws_subnet.subnet_1", shape = "box"]
+		"[root] aws_subnet.subnet_2" [label = "aws_subnet.subnet_2", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_db_instance.default" -> "[root] aws_db_subnet_group.default"
+		"[root] aws_db_instance.default" -> "[root] aws_security_group.default"
+		"[root] aws_db_subnet_group.default" -> "[root] aws_subnet.subnet_1"
+		"[root] aws_db_subnet_group.default" -> "[root] aws_subnet.subnet_2"
+		"[root] aws_security_group.default" -> "[root] provider.aws"
+		"[root] aws_subnet.subnet_1" -> "[root] provider.aws"
+		"[root] aws_subnet.subnet_2" -> "[root] provider.aws"
+	}
+}
+

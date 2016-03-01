@@ -1,0 +1,17 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_autoscaling_group.web-asg" [label = "aws_autoscaling_group.web-asg", shape = "box"]
+		"[root] aws_elb.web-elb" [label = "aws_elb.web-elb", shape = "box"]
+		"[root] aws_launch_configuration.web-lc" [label = "aws_launch_configuration.web-lc", shape = "box"]
+		"[root] aws_security_group.default" [label = "aws_security_group.default", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_autoscaling_group.web-asg" -> "[root] aws_elb.web-elb"
+		"[root] aws_autoscaling_group.web-asg" -> "[root] aws_launch_configuration.web-lc"
+		"[root] aws_elb.web-elb" -> "[root] provider.aws"
+		"[root] aws_launch_configuration.web-lc" -> "[root] aws_security_group.default"
+		"[root] aws_security_group.default" -> "[root] provider.aws"
+	}
+}
+
