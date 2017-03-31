@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='terraform-aws-icons',
     version='0.1.0',
-    url='https://github.com/github/terraform-aws-icons',
+    url='https://github.com/TabbedOut/terraform-aws-icons',
     license='MIT',
     author='TabbedOut',
     author_email='github@tabbedout.com',
